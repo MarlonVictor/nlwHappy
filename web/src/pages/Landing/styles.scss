@@ -1,25 +1,29 @@
+$primary: #15c3d6;
+$primary-dark: #0089a5;
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+//
 #page-landing {
     width: 100vw;
     height: 100vh;
+
     background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(row, center, center);
 
     .content-wrapper {
         position: relative;
       
         width: 100%;
-        max-width: 1100px;
-      
         height: 100%;
+        max-width: 1100px;
         max-height: 680px;
       
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flex(column, space-between, flex-start);
       
         background: url('../../assets/images/landing.svg') no-repeat 80% center;
         background-size: 45%;
@@ -51,9 +55,7 @@
             font-size: 24px;
             line-height: 34px;
           
-            display: flex;
-            flex-direction: column;
-          
+            @include flex(column, unset, unset);
             text-align: right;
     
             strong {
@@ -71,10 +73,7 @@
             background: #FFD666;
             border-radius: 30px;
           
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          
+            @include flex(row, center, center);
             transition: background-color 0.2s;
     
             &:hover {
